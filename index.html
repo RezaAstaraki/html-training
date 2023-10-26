@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            height: 450px;
+            width: 450px;
+            background-color: yellow;
+            position: relative;
+        }
+        #block{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="block"></div>
+    </div>
+    
+    
+</body>
+<script>
+    var block = document.getElementById('block')
+    var interval = setInterval(myfunc,10)
+    var i = 0 
+    function myfunc(){
+
+        if(i==400){
+            clearInterval(interval)
+        }
+        i++
+        block.style.left=i
+        block.style.top=i
+
+    }
+    
+</script>
+</html>
