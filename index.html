@@ -20,24 +20,32 @@
 </head>
 <body>
     <div id="container">
-        <div id="block"></div>
+        <div id="block" onmouseover="mover(this)" onmouseleave="mout(this)">over me</div>
     </div>
     
     
 </body>
 <script>
     var block = document.getElementById('block')
-    var interval = setInterval(myfunc,10)
+    var interval = setInterval(myfunc,100)
     var i = 0 
     function myfunc(){
 
         if(i==400){
-            clearInterval(interval)
+            clearInterval(interval)  
         }
+        console.log(interval)
         i++
         block.style.left=i
         block.style.top=i
+    }
+    function mover(obj){
+        // el = document.getElementById('block')
+        obj.innerHTML = 'thanks'
 
+    }
+    function mout(obj){
+        obj.innerHTML = 'come here'
     }
     
 </script>
